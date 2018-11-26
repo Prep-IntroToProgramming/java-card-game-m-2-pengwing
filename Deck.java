@@ -9,4 +9,11 @@ public class Deck{
             }
         }
     }
+
+    void shuffle(){
+    }
+
+    void draw (){
+        cards.get(Card);
+    }
 }
