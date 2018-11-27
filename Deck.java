@@ -1,6 +1,7 @@
 import java.util.*;
 public class Deck{
     ArrayList<Card> cards = new ArrayList<Card>();
+    int cardValue = 0;
     public Deck(){
         for (int suit = 1; suit < 5; suit++){
             for (int rank = 1; suit < 14; rank++){
@@ -11,9 +12,11 @@ public class Deck{
     }
 
     void shuffle(){
+        
     }
 
     void draw (){
-        cards.get(Card);
+        cards.get(cardValue);
+        cardValue++;
     }
 }
