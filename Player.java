@@ -14,7 +14,7 @@ public class Player {
     }
 
     void addCard(Card c){
-        
+        hand.add(c);
     }
 
     //int calcHand(){
