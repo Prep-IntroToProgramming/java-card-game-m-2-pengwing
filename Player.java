@@ -8,11 +8,16 @@ public class Player {
     }
 
     void showHand(){
-        
+        for (int i = 0; i <= hand.size(); i++){
+            System.out.print(hand.get(i) + " ");
+        }
     }
 
     void addCard(Card c){
+        
     }
 
-    int calcHand(){
+    //int calcHand(){
+       // int handVal = 0;
+       // boolean acePresent = false;
     }
