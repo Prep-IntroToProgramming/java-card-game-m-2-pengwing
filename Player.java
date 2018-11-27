@@ -2,9 +2,13 @@ import java.util.*;
 public class Player {
     //instance variables :/
     ArrayList<Card> hand = new ArrayList<Card>();
-    String name = "potato";
+    String name;
+    Scanner input = new Scanner(System.in);
     void chooseName(){
-        //bonus
+        System.out.println("what is your name?");
+        name = input.next();
+        System.out.println("odd choice of name. hello " + name);
+        input.nextLine();
     }
 
     void showHand(){
@@ -18,6 +22,6 @@ public class Player {
     }
 
     //int calcHand(){
-       // int handVal = 0;
-       // boolean acePresent = false;
-    }
+    // int handVal = 0;
+    // boolean acePresent = false;
+}
