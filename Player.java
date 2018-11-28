@@ -12,8 +12,8 @@ public class Player {
     }
 
     void showHand(){
-        for (int i = 0; i <= hand.size(); i++){
-            System.out.print(hand.get(i) + " ");
+        for (Card x: hand){
+            System.out.println(x.rankToString() + " of " + x.suitToString());
         }
     }
 
@@ -24,7 +24,7 @@ public class Player {
     int calcHand(){
         int handVal = 0;
         boolean acePresent = false;
-        for (int i = 0; i <= hand.size(); i++){
+        for (int i = 0; i < hand.size(); i++){
             if (hand.get(i).rank <= 10){
                 handVal = hand.get(i).rank + handVal;
             } else {
