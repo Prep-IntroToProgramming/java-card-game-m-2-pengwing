@@ -21,7 +21,21 @@ public class Player {
         hand.add(c);
     }
 
-    //int calcHand(){
-    // int handVal = 0;
-    // boolean acePresent = false;
+    int calcHand(){
+        int handVal = 0;
+        boolean acePresent = false;
+        for (int i = 0; i <= hand.size(); i++){
+            if (rank <= 10){
+                handVal = rank + handVal;
+            } else {
+                handVal = handVal + 10;
+            }
+            if (rank == 1){
+                acePresent = true;
+            }
+        }
+        if ((handVal <= 11) && (acePresent == true)){
+            handVal = 10 + handVal;
+        }
+    }
 }
