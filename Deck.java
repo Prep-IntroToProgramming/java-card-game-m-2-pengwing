@@ -4,8 +4,8 @@ public class Deck{
     public Deck(){
         for (int suit = 1; suit < 5; suit++){
             for (int rank = 1; suit < 14; rank++){
-                Card myCard = new Card(suit, rank);
-                cards.add(myCard);
+                //Card myCard = new Card(suit, rank);
+                cards.add(new Card(suit, rank));
             }
         }
     }
