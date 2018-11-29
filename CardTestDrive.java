@@ -1,3 +1,6 @@
+/* test class for card
+ * it works... yeet.
+ */
 class CardTestDrive {
     public static void main(String[] args){
         int testRank = Card.THREE;

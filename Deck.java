@@ -11,8 +11,7 @@ public class Deck{
     }
 
     void shuffle(){
-        
-        //Collections.shuffle(cards);
+        Collections.shuffle(cards);
     }
 
     Card draw (){
