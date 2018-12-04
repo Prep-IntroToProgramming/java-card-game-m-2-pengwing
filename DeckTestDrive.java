@@ -4,6 +4,5 @@ public class DeckTestDrive {
        Deck newDeck = new Deck();
        newDeck.shuffle();
        System.out.println(newDeck.cards.size());
-       System.out.println(newDeck.get(0));
     }
 }
