@@ -32,7 +32,7 @@ public class Game {
         while (true){
             System.out.println("to hit, press 1. to hold, press 2");
             while (!input.hasNextInt()){
-                System.out.println("ok... not an integer... try again");
+                System.out.println("are you dumb? that's not an integer. try again");
                 input.nextLine();
             }
             int choice = input.nextInt();
@@ -65,25 +65,32 @@ public class Game {
             dealer.addCard(c);
             if (dealer.calcHand() > 21){
                 System.out.println(" ");
+                System.out.println("the dealers new hand is:");
                 dealer.showHand();
-                System.out.println("You win by default.. you're not special");
+                System.out.println("and its value is: " + dealer.calcHand());
+                System.out.println("you won! congrats fam");
                 return;
             } else if (dealer.calcHand() == 21){
+                System.out.println(" ");
+                System.out.println("the dealers new hand is:");
                 dealer.showHand();
-                System.out.println("you lose, SUCKER");
+                System.out.println("and its value is: " + dealer.calcHand());
             } else {
                 System.out.println(" ");
                 System.out.println("The dealer's NEW hand is:");
                 dealer.showHand();
+                System.out.println("and its value is: " + dealer.calcHand());
             }
         }
-
-        if (dealer.calcHand() > p1.calcHand()){
+        
+        int dealerVal = dealer.calcHand();
+        int p1Val = p1.calcHand();
+        if (dealerVal > p1Val){
             System.out.println("you lost");
-        } else if (dealer.calcHand() < p1.calcHand()){
+        } else if (dealerVal < p1Val){
             System.out.println("you won!");
         } else {
-            System.out.println("tis tie");
+            System.out.println("'tis tie");
         }
     }
 }

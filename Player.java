@@ -1,6 +1,6 @@
 import java.util.*;
 public class Player {
-    //instance variables :/
+    //instance variables
     ArrayList<Card> hand = new ArrayList<Card>();
     String name;
     Scanner input = new Scanner(System.in);
