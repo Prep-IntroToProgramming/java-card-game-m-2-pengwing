@@ -37,12 +37,14 @@ public class Game {
             while (!input.hasNextInt()){
                 System.out.println("that's not an integer. try again");
                 input.nextLine();
+                //makes sure user CANNOT input anything other than an integer
             }
             int choice = input.nextInt();
             while ((choice != 1) && (choice !=2)){
                 System.out.println("i said either 1 or 2 doofus");
                 input.nextLine();
                 choice = input.nextInt();
+                //makes sure user CANNOT input anything other than 1 or 2
             }
 
             if (choice == 1){
@@ -50,16 +52,17 @@ public class Game {
                 p1.addCard(c); //adding card to hand
                 System.out.println("your new hand is:");
                 p1.showHand();
-                System.out.println("your new hand value is: " + p1.calcHand());
+                System.out.println("and it's value is: " + p1.calcHand()); 
+                //tells user new hand and its value
                 if (p1.calcHand() > 21) {
                     System.out.println("you lost hahahahahaha");
-                    return;
+                    return; //if user exceeds 21, they lose automatically
                 }
             } else if (choice == 2){
                 System.out.println("cool. you held. awesomesauce");
-                break;
+                break; // breaks out of true loop
             } else {
-                break;
+                break; // breaks out of true loop
             }
         }
         
@@ -72,12 +75,7 @@ public class Game {
                 dealer.showHand();
                 System.out.println("and its value is: " + dealer.calcHand());
                 System.out.println("you won! congrats fam");
-                return;
-            } else if (dealer.calcHand() == 21){
-                System.out.println(" ");
-                System.out.println("the dealers new hand is:");
-                dealer.showHand();
-                System.out.println("and its value is: " + dealer.calcHand());
+                return; //if dealer exceeds 21, player automatically wins
             } else {
                 System.out.println(" ");
                 System.out.println("The dealer's NEW hand is:");
