@@ -36,21 +36,30 @@ public class Game {
                 input.nextLine();
             }
             int choice = input.nextInt();
+            while ((choice != 1) && (choice !=2)){
+                System.out.println("i said either 1 or 2 doofus");
+                input.nextLine();
+                choice = input.nextInt();
+            }
+
             if (choice == 1){
-                Card c = deck1.draw();
-                p1.addCard(c);
+                Card c = deck1.draw(); //taking  card from deck
+                p1.addCard(c); //adding card to hand
                 System.out.println("your new hand is:");
                 p1.showHand();
                 System.out.println("your new hand value is: " + p1.calcHand());
-            } else if (choice == 2){
-                
-            } else {
-                while ((choice != 1) && (choice !=2)){
-                    System.out.println("i said either 1 or 2 doofus");
-                    input.nextLine();
+                if (p1.calcHand() > 21) {
+                    System.out.println("you lost hahahahahaha");
+                    return;
                 }
+            } else if (choice == 2){
+                System.out.println("cool. you held. awesomesauce");
+                break;
+            } else {
+                break;
             }
         }
+        
         while (dealer.calcHand() <= 16){
             Card c = deck1.draw();
             dealer.addCard(c);
@@ -58,6 +67,7 @@ public class Game {
                 System.out.println(" ");
                 dealer.showHand();
                 System.out.println("You win by default.. you're not special");
+                return;
             } else if (dealer.calcHand() == 21){
                 dealer.showHand();
                 System.out.println("you lose, SUCKER");
@@ -67,6 +77,15 @@ public class Game {
                 dealer.showHand();
             }
         }
+
+        if (dealer.calcHand() > p1.calcHand()){
+            System.out.println("you lost");
+        } else if (dealer.calcHand() < p1.calcHand()){
+            System.out.println("you won!");
+        } else {
+            System.out.println("tis tie");
+        }
     }
 }
+
 
