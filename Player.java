@@ -4,6 +4,9 @@ public class Player {
     ArrayList<Card> hand = new ArrayList<Card>();
     String name;
     Scanner input = new Scanner(System.in);
+    /* lets user choose name
+     * yeet
+     */
     void chooseName(){
         System.out.println("what is your name?");
         name = input.next();
