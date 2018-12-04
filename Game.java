@@ -86,7 +86,12 @@ public class Game {
         
         int dealerVal = dealer.calcHand();
         int p1Val = p1.calcHand();
-        if (dealerVal > p1Val){
+        /* comparing dealer's hand to player's hand
+         * if the dealer's hand is bigger, the player loses
+         * if the dealer's hand is smaller, the player wins
+         * if they're equal, then its a tie
+         */ 
+        if (dealerVal > p1Val){ 
             System.out.println("you lost");
         } else if (dealerVal < p1Val){
             System.out.println("you won!");
