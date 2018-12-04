@@ -36,6 +36,7 @@ public class Game {
             System.out.println("your new hand is:");
             p1.showHand();
             System.out.println("your new hand value is: " + p1.calcHand());
+            //blahlkdhfjklsadjflakdsfaksdjfsld
         }
             
         while (dealer.calcHand() <= 16){
