@@ -65,7 +65,7 @@ public class Game {
                 break; // breaks out of true loop
             }
         }
-        
+
         while (dealer.calcHand() <= 16){
             Card c = deck1.draw();
             dealer.addCard(c);
@@ -83,7 +83,7 @@ public class Game {
                 System.out.println("and its value is: " + dealer.calcHand());
             }
         }
-        
+
         int dealerVal = dealer.calcHand();
         int p1Val = p1.calcHand();
         /* comparing dealer's hand to player's hand
@@ -100,5 +100,4 @@ public class Game {
         }
     }
 }
-
 
