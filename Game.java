@@ -20,19 +20,22 @@ public class Game {
         System.out.println("The dealer's hand is:");
         dealer.showHand(); //runs show hand method for dealer's hand
         System.out.println("the dealer's hand value is: " + dealer.calcHand());
+        /* if either dealer or player gets 21 immediately, they win/lose 
+         * accordingly
+         */
         if (p1.calcHand() == 21){
             System.out.println("you won!");
-            return;
+            return; //return statement ends game
         }
         if (dealer.calcHand() == 21){
             System.out.println("you lose :(");
-            return;
+            return; //return statement ends game
         }
         System.out.println(" ");
-        while (true){
-            System.out.println("to hit, press 1. to hold, press 2");
+        while (true){ //true is always true so it continues until it breaks
+            System.out.println("to hit, press 1. to hold, press 2"); //prompts user to hit or hold
             while (!input.hasNextInt()){
-                System.out.println("are you dumb? that's not an integer. try again");
+                System.out.println("that's not an integer. try again");
                 input.nextLine();
             }
             int choice = input.nextInt();
