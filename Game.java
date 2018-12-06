@@ -39,6 +39,7 @@ public class Game {
              * input an int and then a string, it doesn't
              * crash. right now, if you do that, it'll crash
              */
+
             while (!input.hasNextInt()){
                 System.out.println("that's not an integer. try again");
                 input.nextLine();
