@@ -34,9 +34,12 @@ public class Game {
         System.out.println(" ");
         while (true){ //true is always true so it continues until it breaks
             System.out.println("to hit, press 1. to hold, press 2"); //prompts user to hit or hold
-            int choice = input.nextInt();
-            while (!input.hasNextInt() || ((choice != 1) && (choice !=2))){
-                if (!input.hasNextInt()){
+            int choice = 0;
+            while (!input.hasNextInt() && (choice != 1) && (choice !=2)){
+                System.out.println("i said either 1 or 2 doofus");
+                input.nextLine();
+                choice = input.nextInt();
+                /*if (!input.hasNextInt()){
                     System.out.println("that's not an integer. try again");
                     input.nextLine();
                     //makes sure user CANNOT input anything other than an integer
@@ -47,15 +50,16 @@ public class Game {
                     choice = input.nextInt();
                     //makes sure user CANNOT input anything other than 1 or 2
                 }
+                */
             }
             /*
             while ((choice != 1) && (choice !=2)){
-                System.out.println("i said either 1 or 2 doofus");
-                input.nextLine();
-                choice = input.nextInt();
-                //makes sure user CANNOT input anything other than 1 or 2
+            System.out.println("i said either 1 or 2 doofus");
+            input.nextLine();
+            choice = input.nextInt();
+            //makes sure user CANNOT input anything other than 1 or 2
             }
-            */
+             */
 
             if (choice == 1){
                 Card c = deck1.draw(); //taking  card from deck
