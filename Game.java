@@ -1,13 +1,13 @@
 import java.util.*;
 public class Game {
-    Player p1 = new Player();
-    Player dealer = new Player();
-    Deck deck1 = new Deck();
-    Scanner input = new Scanner(System.in);
+    Player p1 = new Player(); //creates a new player object called p1
+    Player dealer = new Player(); //creates new player object called dealer
+    Deck deck1 = new Deck(); //creates new deck from the deck constructor in the deck class
+    Scanner input = new Scanner(System.in); //gets user input
     public void main(){
-        p1.chooseName();
-        deck1.shuffle();
-        for (int i = 0; i < 2; i++){
+        p1.chooseName();// runs the choose name method, and allows player to input a name
+        deck1.shuffle(); // shuffles the deck to start the game
+        for (int i = 0; i < 2; i++){ //repeats twice, and gives the dealer and player cards
             Card c = deck1.draw();
             p1.addCard(c); //adds two cards to player's hand
             Card x = deck1.draw();
@@ -81,10 +81,15 @@ public class Game {
                 System.out.println("The dealer's NEW hand is:");
                 dealer.showHand();
                 System.out.println("and its value is: " + dealer.calcHand());
+                /* else, the program prints out the dealers new hand and its value
+                 * instead of having the dealer automatically win if they get 21,
+                 * it'll compare to the player's hand value in case they also got 21;
+                 * in that case, we made it a tie
+                 */
             }
         }
 
-        int dealerVal = dealer.calcHand();
+        int dealerVal = dealer.calcHand(); // assigns integer to final dealer and player calc hand values
         int p1Val = p1.calcHand();
         /* comparing dealer's hand to player's hand
          * if the dealer's hand is bigger, the player loses
