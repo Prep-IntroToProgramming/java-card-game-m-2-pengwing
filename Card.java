@@ -143,6 +143,12 @@ public class Card {
             return null;
         }
     }
+    /*
+     * overloaded method to be able to access the string version of a card, as
+     * opposed to the number values of said card
+     * DIFFERENCE FROM METHODS ABOVE: no parameter 
+     * (allows user to use the methods with any specified card)
+     */
     public String rankToString() {
         if (rank == ACE) {
             return "Ace";
@@ -177,7 +183,7 @@ public class Card {
             return null;
         }    
     }
-      public String suitToString(){
+      public String suitToString(){ 
         switch (suit) {
             case DIAMONDS:
             return "Diamonds";
