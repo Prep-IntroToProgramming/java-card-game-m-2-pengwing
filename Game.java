@@ -32,6 +32,7 @@ public class Game {
             return; //return statement ends game
         }
         System.out.println(" ");
+        int choice = 0;
         while (true){ //true is always true so it continues until it breaks
             System.out.println("to hit, press 1. to hold, press 2"); //prompts user to hit or hold
             /*
@@ -39,22 +40,22 @@ public class Game {
              * input an int and then a string, it doesn't
              * crash. right now, if you do that, it'll crash
              */
-            int choice = 0;
+            
 
             while((choice != 1) && (choice !=2)){
-            while (!input.hasNextInt()){
-                System.out.println("that's not an integer. try again");
-                input.nextLine();
-                //makes sure user CANNOT input anything other than an integer
+                while (!input.hasNextInt()){
+                    System.out.println("that's not an integer. try again");
+                    input.nextLine();
+                    //makes sure user CANNOT input anything other than an integer
+                }
+                int choicee = input.nextInt();
+                while ((choicee != 1) && (choicee !=2)){
+                    System.out.println("i said either 1 or 2 doofus");
+                    input.nextLine();
+                    //choicee = input.nextInt();
+                    //makes sure user CANNOT input anything other than 1 or 2
+                }
             }
-            int choicee = input.nextInt();
-            while ((choicee != 1) && (choicee !=2)){
-                System.out.println("i said either 1 or 2 doofus");
-                input.nextLine();
-                //choicee = input.nextInt();
-                //makes sure user CANNOT input anything other than 1 or 2
-            }
-        }
 
             if (choice == 1){
                 Card c = deck1.draw(); //taking  card from deck
