@@ -32,31 +32,23 @@ public class Game {
             return; //return statement ends game
         }
         System.out.println(" ");
-        int choice = 0;
         while (true){ //true is always true so it continues until it breaks
             System.out.println("to hit, press 1. to hold, press 2"); //prompts user to hit or hold
-            /*
-             * two while loops have to be combined in some way so if you
-             * input an int and then a string, it doesn't
-             * crash. right now, if you do that, it'll crash
-             */
-            
-
-            while((choice != 1) && (choice !=2)){
-                while (!input.hasNextInt()){
-                    System.out.println("that's not an integer. try again");
-                    input.nextLine();
-                    //makes sure user CANNOT input anything other than an integer
-                }
-                int choicee = input.nextInt();
-                while ((choicee != 1) && (choicee !=2)){
-                    System.out.println("i said either 1 or 2 doofus");
-                    input.nextLine();
-                    //choicee = input.nextInt();
-                    //makes sure user CANNOT input anything other than 1 or 2
-                }
+            while (!input.hasNextInt()){
+                System.out.println("that's not an integer. try again");
+                input.nextLine();
+                //makes sure user CANNOT input anything other than an integer
             }
-
+            int choice = input.nextInt();
+            while ((choice != 1) && (choice !=2)){
+                System.out.println("i said either 1 or 2 doofus");
+                input.nextLine();
+                choice = input.nextInt();
+                //makes sure user CANNOT input anything other than 1 or 2
+            }
+            //we tried to combine the two while loops but they would contain a string and an integer which wouldn't work  
+            //for this reason, it'll give an error if you type letters, then a non-1 or 2 number, and then try to type letters again
+            //however, we left the error because we didn't know how to fix it
             if (choice == 1){
                 Card c = deck1.draw(); //taking  card from deck
                 p1.addCard(c); //adding card to hand
@@ -115,4 +107,3 @@ public class Game {
         }
     }
 }
-
