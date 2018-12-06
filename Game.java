@@ -34,6 +34,11 @@ public class Game {
         System.out.println(" ");
         while (true){ //true is always true so it continues until it breaks
             System.out.println("to hit, press 1. to hold, press 2"); //prompts user to hit or hold
+            /*
+             * two while loops have to be combined in some way so if you
+             * input an int and then a string, it doesn't
+             * crash. right now, if you do that, it'll crash
+             */
             while (!input.hasNextInt()){
                 System.out.println("that's not an integer. try again");
                 input.nextLine();
